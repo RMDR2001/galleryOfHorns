@@ -1,6 +1,17 @@
+import { useState } from "react";
+
 function Header() {
-    return(
-        <h1>Horns Gallery</h1>
+    const [color, setColor] = useState(true);
+
+    function cambiarFondo() {
+        setColor(!color);
+    }
+
+    return (
+            <div onClick={cambiarFondo}>
+                {color ? <h1 className="cambio1">Horns Gallery</h1>
+                    : <h1 className="cambio2">Horns Gallery</h1>}
+            </div>
     );
 }
 
